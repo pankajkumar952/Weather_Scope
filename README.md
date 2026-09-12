@@ -2,6 +2,8 @@
 
 **AI-powered weather intelligence — not just data, but understanding.**
 
+🔗 **Live Demo:** [weatherscope-fpw9zzhkx-pankaj-20b2.vercel.app](https://weatherscope-fpw9zzhkx-pankaj-20b2.vercel.app/)
+
 WeatherScope is a modern React + Vite weather dashboard that pairs real-time forecasts with an AI assistant. Instead of dumping raw numbers on the screen, it explains what the weather actually *means* for your day: whether it's safe to travel, how to dress, and what health precautions to take.
 
 > Built and maintained by **Pankaj Kumar**. See [LICENSE](./LICENSE) before reusing any part of this project.
@@ -55,8 +57,14 @@ VITE_API_KEY=your_openweathermap_api_key
 VITE_OPENROUTER_API_KEY=your_openrouter_api_key
 ```
 
-- Get a free OpenWeatherMap key at [openweathermap.org/api](https://openweathermap.org/api). New keys can take up to a couple of hours to activate.
-- Get a free OpenRouter key at [openrouter.ai](https://openrouter.ai/).
+Both keys are free to generate:
+
+| Key | Where to get it | Notes |
+| --- | ---------------- | ----- |
+| `VITE_API_KEY` | [Sign up & generate an OpenWeatherMap API key](https://home.openweathermap.org/users/sign_up) | Free tier is enough. New keys can take up to ~2 hours to activate. |
+| `VITE_OPENROUTER_API_KEY` | [Sign up & generate an OpenRouter API key](https://openrouter.ai/settings/keys) | No credit card required. Key must start with `sk-or-v1-`. |
+
+After creating your OpenRouter key, also visit [openrouter.ai/settings/privacy](https://openrouter.ai/settings/privacy) and enable **"Enable free endpoints that may train on inputs"** and **"Enable free endpoints that may publish prompts"** — the free AI models used by this app require these to be turned on.
 
 ### 3. Run the dev server
 
