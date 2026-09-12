@@ -1,0 +1,151 @@
+/* ============================================
+   WeatherScope — by Pankaj Kumar
+   Design: "Forest Emerald" Theme
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* === TOAST SYSTEM === */
+.toast-custom {
+  border-radius: 14px !important;
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-outline-variant, #a7f3d0);
+  box-shadow: 0 8px 32px rgba(5, 150, 105, 0.2);
+  animation: toastSlideIn 0.3s ease-out;
+}
+
+.toast-success-custom {
+  background: var(--color-primary-container, #047857) !important;
+  color: white !important;
+}
+
+.toast-error-custom {
+  background: var(--color-error-container, #7f1d1d) !important;
+  color: var(--color-error, #fca5a5) !important;
+}
+
+.toast-info-custom {
+  background: var(--color-surface-container-high, #a7f3d0) !important;
+  color: var(--color-on-surface, #052e16) !important;
+  border: 1px solid var(--color-outline-variant, #a7f3d0) !important;
+}
+
+.toast-body {
+  padding: 12px 16px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.toast-progress {
+  background: var(--color-primary, #059669) !important;
+  height: 2px !important;
+}
+
+@keyframes toastSlideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* === INTERACTIVE ELEMENTS === */
+.card-hover {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(5, 150, 105, 0.15);
+}
+
+.hover-lift {
+  transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* === LOADING SPINNER === */
+.loading-spinner {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.loading-spinner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(5, 150, 105, 0.15);
+  border-top-color: #059669;
+  border-radius: 50%;
+  animation: spinner-rotate 0.8s linear infinite;
+}
+
+@keyframes spinner-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* === TOOLTIP === */
+.tooltip { position: relative; }
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--color-surface-container-highest, #6ee7b7);
+  color: var(--color-on-surface, #052e16);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  border: 1px solid var(--color-outline-variant, #a7f3d0);
+  margin-bottom: 6px;
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* === GRADIENT ACCENTS === */
+.emerald-gradient {
+  background: linear-gradient(135deg, #059669 0%, #0891b2 100%);
+}
+
+.emerald-text-gradient {
+  background: linear-gradient(135deg, #059669 0%, #0891b2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 640px) {
+  .toast-custom {
+    margin: 4px 0 !important;
+    border-radius: 10px !important;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-1px);
+  }
+}
