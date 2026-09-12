@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: Ping website
-        run: curl -L --fail --silent --show-error ""
+        run: curl -L --fail --silent --show-error "https://weatherscope-fpw9zzhkx-pankaj-20b2.vercel.app/"
